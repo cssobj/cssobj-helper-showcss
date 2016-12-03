@@ -13,7 +13,7 @@ Show css text from style tag, style id, chrome dev tools, or cssobj result.
 - or paste below code into console:
 
 ``` javascript
-function showcss(s,e){"string"==typeof s&&(s=document.getElementById(s)),"object"==typeof s&&s&&s.cssdom&&(s=s.cssdom),s||(s=$0);var t=s.sheet||s.styleSheet;if(t.cssText)return t.cssText;for(var o="",c=t.cssRules||t.rules,n=0,l=c.length;n<l;n++)o+=c[n].cssText+"\n";e?e(o):console.log(o)}
+function showcss(e,s){"string"==typeof e&&(e=document.getElementById(e)),"object"==typeof e&&e&&e.cssdom&&(e=e.cssdom),e||(e=$0);var t=e.sheet||e.styleSheet;if(t.cssText)return t.cssText;for(var o="",c=t.cssRules||t.rules,n=0,r=c.length;n<r;n++)o+=c[n].cssText+"\n";return s?s(o):console.log(o)}
 ```
 
 Then can show css for any `<style>` tag:
@@ -29,3 +29,24 @@ cssobj(obj, {onUpdate: showcss})
 
 ```
 
+## API
+
+### showcss(source: dom|string|result|any, callback: (string)->any ) -> any
+
+Display css text from **source**, and call **callback** with the text.
+
+#### **source** can be
+
+  - empty: last selected style tag from DevTools
+
+  - string: style tag ID
+
+  - dom: style tag dom
+
+  - result: cssobj result object
+
+### **callback** can be
+
+  - empty: will use `console.log` as callback, means output css text into console.
+
+  - function: will call the function with `callback(str)`, and return the result

@@ -10,6 +10,6 @@ function showcss (dom, callback) {
   for (var i = 0, len = rules.length; i < len; i++) {
     str += rules[i].cssText + '\n'
   }
-  if(!callback) console.log(str)
-  else callback(str)
+  if(!callback) return console.log(str)
+  else return callback(str)
 }
