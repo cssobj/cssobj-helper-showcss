@@ -1,6 +1,6 @@
 {
   "name": "cssobj-helper-showcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Show css text from CSSOM (style tag)",
   "main": "showcss.cjs.js",
   "scripts": {
