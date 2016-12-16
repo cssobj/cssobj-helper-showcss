@@ -1,4 +1,4 @@
-function showcss(callback) {
+export default function _showcss(callback) {
   return function (dom) {
     if(typeof dom=='string') dom = document.getElementById(dom)
     if(typeof dom=='object' && dom && dom.cssdom) dom = dom.cssdom
