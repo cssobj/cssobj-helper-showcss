@@ -2,20 +2,24 @@
 Show css text from style tag, style id, chrome dev tools, or **cssobj result**.
 
 
-## **Use in DevTools**
+## **Install**
 
-- include below script into html:
+- **include in html**
 
 ``` html
 <script src="https://unpkg.com/cssobj-helper-showcss"></script>
 // showcss function is now available
 ```
 
-- bookmarklet
+- **bookmarklet**
+
+In Chrome, press <kbd>Ctrl+D</kbd>, popup the favorite dialog, click **Modify**, paste in **URL** as below:
 
 ``` javascript
 javascript:showcss=function(){function e(e){return function(s){'string'==typeof s&&(s=document.getElementById(s)),'object'==typeof s&&s&&s.cssdom&&(s=s.cssdom),s||(s=$0);var t=s.sheet||s.styleSheet;if(t.cssText)return t.cssText;for(var n='',o=t.cssRules||t.rules,r=0,c=o.length;r<c;r++)n+=o[r].cssText+'\n';return e?e(n):console.log(n)}}return e}();
 ```
+
+## **Usage**
 
 Then can show CSS in any `<style>` tag:
 
