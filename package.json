@@ -1,10 +1,10 @@
 {
   "name": "cssobj-helper-showcss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Show css text from CSSOM (style tag), and cssobj result",
   "main": "./dist/cssobj-helper-showcss.cjs.js",
   "browser": "./dist/cssobj-helper-showcss.iife.js",
-  "jsnext:main": "./dist/cssobj-helper-showcss.es.js",
+  "module": "./dist/cssobj-helper-showcss.es.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
