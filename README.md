@@ -16,7 +16,7 @@ Show css text from style tag, style id, chrome dev tools, or **cssobj result**.
 In Chrome, press <kbd>Ctrl+D</kbd>, popup the favorite dialog, click **Modify**, paste in **URL** as below:
 
 ``` javascript
-javascript:showcss=function(){function e(e){return function(s){'string'==typeof s&&(s=document.getElementById(s)),'object'==typeof s&&s&&s.cssdom&&(s=s.cssdom),s||(s=$0);var t=s.sheet||s.styleSheet;if(t.cssText)return t.cssText;for(var n='',o=t.cssRules||t.rules,r=0,c=o.length;r<c;r++)n+=o[r].cssText+'\n';return e?e(n):console.log(n)}}return e}();
+javascript:showcss=function(){"use strict";function e(e){return function(t){if("string"==typeof t&&(t=document.getElementById(t)),"object"==typeof t&&t&&t.cssdom&&(t=t.cssdom),(t=t||$0)&&"STYLE"==t.tagName){var s=t.sheet||t.styleSheet;if(s.cssText)return s.cssText;for(var n="",r=s.cssRules||s.rules,c=0,o=r.length;c<o;c++)n+=r[c].cssText+"\n";return e?e(n):console.log(n)}}}return e}();
 ```
 
 ## **Usage**

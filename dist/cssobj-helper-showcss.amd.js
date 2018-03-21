@@ -1,10 +1,11 @@
-define(function () {
+define(function () { 'use strict';
 
 function _showcss(callback) {
   return function (dom) {
     if(typeof dom=='string') dom = document.getElementById(dom);
     if(typeof dom=='object' && dom && dom.cssdom) dom = dom.cssdom;
-    if(!dom) dom = $0;
+    dom = dom || $0;
+    if(!dom || dom.tagName!='STYLE') return
     var sheet = dom.sheet || dom.styleSheet;
     if (sheet.cssText) return sheet.cssText
 
